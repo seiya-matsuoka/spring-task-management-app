@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>タスク詳細 | タスク管理アプリ</title>
+</head>
+
+<body>
+	<h1>タスク詳細</h1>
+	<a href="./list.html" th:href="@{/tasks}">一覧に戻る</a>
+	<div>
+		<h2 th:text="${task.summary}">(summary)</h2>
+		<p th:text="${task.description}">(description)</p>
+	</div>
+</body>
+
+</html>

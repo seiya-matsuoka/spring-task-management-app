@@ -21,4 +21,8 @@ public class TaskService {
     public void create(String summary, String description) {
 		taskRepository.insert(summary, description);
     }
+
+	public TaskEntity findById(long taskId) {
+        return taskRepository.findById(taskId);
+    }
 }

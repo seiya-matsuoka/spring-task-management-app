@@ -14,4 +14,7 @@ public interface TaskRepository {
 
     @Insert("insert into tasks (summary, description) values (#{summary}, #{description})")
     void insert(String summary, String description);
+
+    @Select("select * from tasks where id = #{taskId}")
+    TaskEntity findById(long taskId);
 }
