@@ -1,0 +1,10 @@
+insert into tasks (summary, description) values ('タスク1', '初期データ1');
+insert into tasks (summary, description) values ('タスク2', '初期データ2');
+insert into tasks (summary, description) values ('タスク3', '初期データ3');
+insert into tasks (summary, description) values ('タスク4', '初期データ4');
+insert into tasks (summary, description) values ('タスク5', '初期データ5');
+insert into tasks (summary, description) values ('タスク6', '初期データ6');
+insert into tasks (summary, description) values ('タスク7', '初期データ7');
+insert into tasks (summary, description) values ('タスク8', '初期データ8');
+insert into tasks (summary, description) values ('タスク9', '初期データ9');
+insert into tasks (summary, description) values ('タスク10', '初期データ10');
