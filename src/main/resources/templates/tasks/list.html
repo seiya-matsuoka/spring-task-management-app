@@ -20,7 +20,11 @@
 		<tbody>
 			<tr th:each="task : ${taskList}">
 				<th th:text="${task.id}">(id)</th>
-				<td th:text="${task.summary}">(summary)</td>
+				<td>
+					<a href="./detail.html" th:href="@{/tasks/{taskId}(taskId=${task.id})}" th:text="${task.summary}">
+						(summary)
+					</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
