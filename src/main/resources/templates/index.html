@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -8,6 +8,9 @@
 
 <body>
 	<h1>タスク管理アプリ</h1>
+	<ul>
+		<li><a href="./tasks/list.html" th:href="@{/tasks}">課題一覧</a></li>
+	</ul>
 </body>
 
 </html>
