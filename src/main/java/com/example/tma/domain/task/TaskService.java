@@ -18,8 +18,8 @@ public class TaskService {
 	}
 
 	@Transactional
-    public void create(String summary, String description) {
-		taskRepository.insert(summary, description);
+    public void create(String summary, String description, Integer priority) {
+		taskRepository.insert(summary, description, priority);
     }
 
 	public TaskEntity findById(long taskId) {

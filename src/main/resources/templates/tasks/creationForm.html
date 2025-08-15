@@ -20,6 +20,16 @@
 			<p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">(error)</p>
 		</div>
 		<div>
+		    <label for="priorityInput">優先順位</label>
+		    <select id="priorityInput" th:field="*{priority}">
+		        <option value="" selected>選択してください</option>
+		        <option value="1">1</option>
+		        <option value="2">2</option>
+		        <option value="3">3</option>
+		    </select>
+		    <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">(error)</p>
+		</div>
+		<div>
 			<button type="submit">作成</button>
 			<a href="./list.html" th:href="@{/tasks}">キャンセル</a>
 		</div>

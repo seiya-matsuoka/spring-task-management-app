@@ -37,7 +37,7 @@ public class TaskController {
         if (bindingResult.hasErrors()) {
             return showCreationForm(form);
         }
-        taskService.create(form.getSummary(), form.getDescription());
+        taskService.create(form.getSummary(), form.getDescription(), form.getPriority());
         return "redirect:/tasks";
     }
 
