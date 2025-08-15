@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.tma.domain.task.TaskService;
 
@@ -22,10 +23,20 @@ public class TaskController {
 	private final TaskService taskService;
 
 	@GetMapping
-	public String showList(Model model) {
-		model.addAttribute("taskList", taskService.findAll());
-		return "tasks/list";
-	}
+    public String showList(
+            @RequestParam(required = false) String sort,
+            @RequestParam(required = false) String dir,
+            Model model) {
+
+        model.addAttribute("taskList", taskService.findAll(sort, dir));
+        
+        String normalizedSort = (sort == null || sort.isBlank()) ? "createdAt" : sort;
+        String normalizedDir  = (dir  == null || dir.isBlank())  ? "asc"       : dir.toLowerCase();
+        model.addAttribute("sort", normalizedSort);
+        model.addAttribute("dir", normalizedDir);
+
+        return "tasks/list";
+    }
 
     @GetMapping("/creationForm")
     public String showCreationForm(@ModelAttribute TaskForm form) {
@@ -44,6 +55,6 @@ public class TaskController {
     @GetMapping("/{taskId}")
     public String showDetail(@PathVariable("taskId") long taskId, Model model) {
         model.addAttribute("task", taskService.findById(taskId));
-        return "tasks/detail";
-    }
+		return "tasks/detail";
+	}
 }
