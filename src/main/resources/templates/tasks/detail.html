@@ -11,6 +11,14 @@
 	<a href="./list.html" th:href="@{/tasks}">一覧に戻る</a>
 	<div>
 		<h2 th:text="${task.summary}">(summary)</h2>
+		<div>
+			<span>優先順位：</span>
+			<span th:text="${task.priority}">(priority)</span>
+		</div>
+		<div>
+			<span>登録日：</span>
+			<span th:text="${#temporals.format(task.createdAt, 'yyyy年M月d日 HH時mm分')}">(createdAt)</span>
+		</div>
 		<p th:text="${task.description}">(description)</p>
 	</div>
 </body>
